@@ -10,7 +10,7 @@ namespace JobWebsite.Models
         public string LastName { get; set; }
         public DateTime? DateOfBirth { get; set; }
         public virtual UserType UserType { get; set; }
-        public IList<Attachment.Attachment> Attachments { get; set; }
+        public virtual IList<Attachment.Attachment> Attachments { get; set; }
     }
 }
 

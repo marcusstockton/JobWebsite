@@ -10,6 +10,7 @@ namespace JobWebsite.Models.Attachment
         public string FileName { get; set; }
         public string FileType { get; set; }
         public string FileLocation { get; set; }
+        public ApplicationUser User{get;set;}
         public AttachmentType AttachmentType { get; set; }
     }
 }

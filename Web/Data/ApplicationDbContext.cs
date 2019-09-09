@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using JobWebsite.Models;
+using JobWebsite.Models.Attachment;
 using JobWebsite.Models.Job;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
@@ -28,7 +29,16 @@ namespace JobWebsite.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<ApplicationUser>()
-            .HasOne(b => b.UserType);
+                .HasOne(b => b.UserType);
+
+
+            modelBuilder.Entity<Attachment>()
+                .HasOne(b => b.User).WithMany(x=>x.Attachments);
+            modelBuilder.Entity<Attachment>()
+                .HasOne(b => b.CreatedBy);
+            modelBuilder.Entity<Attachment>()
+                .Property(b => b.CreatedDate)
+                .HasDefaultValue(DateTime.Now);
 
             modelBuilder.Entity<UserType>()
                 .Property(b => b.CreatedDate)
