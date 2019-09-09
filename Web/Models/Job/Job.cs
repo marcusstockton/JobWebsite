@@ -7,6 +7,9 @@ namespace JobWebsite.Models.Job
     {
         public string Title { get; set; }
         public string Description { get; set; }
+        public string Responsibilities{get;set;}
+        public TimeSpan WorkingHoursStart{get;set;}
+        public TimeSpan WorkingHoursEnd{get;set;}
         public int MinSalary { get; set; }
         public int MaxSalary { get; set; }
         public DateTime PublishDate { get; set; }
